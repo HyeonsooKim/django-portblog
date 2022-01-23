@@ -15,6 +15,6 @@ project의 메인화면은 index 이름이고, blog 앱의 메인 화면도 inde
 그래서 별도의 이름을 지정해줌
 """
 app_name = 'project'
-urlpatterns =[
+urlpatterns = [
     path('', views.project_index, name='index')
 ]
