@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% block title %}
+<title>프로젝트</title>
+{% endblock %}
+{% block content %}
+<!--project-->
+<section class="project">
+    <div class="inner">
+        <ul class="project-list">
+            {% for item in projects %}
+            <li>
+                <div class="card">
+                    <div class="card-inner">
+                        <a href="{% url 'project:detail' item.id %}">
+                            <div class="card-img">
+                                <img src="{{ item.image.url }}" alt="{{ item.title }}" width="300px">
+                            </div>
+                            <div class="card-title">
+                                <p>
+                                    {{ item.title }}
+                                </p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
+</section>
+<!--end project-->
+{% endblock %}
+
