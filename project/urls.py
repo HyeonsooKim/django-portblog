@@ -16,5 +16,6 @@ project의 메인화면은 index 이름이고, blog 앱의 메인 화면도 inde
 """
 app_name = 'project'
 urlpatterns = [
-    path('', views.project_index, name='index')
+    path('', views.project_index, name='index'),
+    path('detail/<int:id>', views.project_detail, name='detail'),
 ]

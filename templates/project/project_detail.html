@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% block title %}
+<title>
+    {{ project.title }}
+</title>
+{% endblock %}
+{% block content %}
+<!--project detail-->
+<section class="project-detail">
+    <div class="inner">
+        <div class="detail">
+            <div class="detail-img">
+                <img src="{{ project.image.url }}" alt="{{ project.title }}" width="500px">
+            </div>
+            <div class="detail-content">
+                <div class="title">
+                    <p>{{ project.title }}</p>
+                </div> <div class="tech">
+                <p>{{ project.tech }}</p>
+            </div>
+                <div class="description">
+                    <p>{{ project.description }}</p>
+                </div>
+            </div>
+        </div>
+        <div class="list">
+            <a href="{% url 'project:index' %}">
+                <p>목록으로</p>
+            </a>
+        </div>
+    </div>
+</section>
+<!--end detail-->
+{% endblock %}
+
