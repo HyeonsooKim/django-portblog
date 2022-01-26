@@ -1,0 +1,171 @@
+/* style.css */
+@charset "utf-8";
+* {
+    box-sizing: border-box;
+    text-decoration: none;
+}
+body {
+    font-family: 'NanumSquare', sans-serif;
+    font-size: 14px;
+    color: #333;
+}
+.wrap {
+    background-color: #fafafa;
+} /* header */
+#header {
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 999;
+    width: 100%;
+    background: #fff;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.09);
+    transition: all 0.7s;
+}
+#header .inner {
+    width: 70%;
+    height: 90px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+}
+.logo {
+    display: block;
+    padding-top: 10px;
+}
+.logo > a {
+    display: block;
+    text-indent: -9999px;
+    width: 45px;
+    height: 70px;
+    background: url('/static/images/logo.png') no-repeat;
+    background-size: 100%;
+}
+.nav ul {
+    display: flex;
+    width: 120px;
+    justify-content: space-between;
+    line-height: 90px;
+}
+.nav ul li a {
+    font-size: 16px;
+    color: #000;
+} /* header scroll event */
+#header.on {
+    position: fixed;
+} /* project index */
+.project {
+    padding-top: 170px;
+    padding-bottom: 70px;
+    width: 100%;
+}
+.project .inner {
+    width: 70%;
+    margin: 0 auto;
+}
+.project-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+.project-list li {
+    margin-bottom: 30px;
+}
+.card {
+    background: #fff;
+    border: 1px solid rgba(0, 0, 0, 0.09);
+}
+.card-img img {
+    width: 100%;
+}
+.card-img {
+    overflow: hidden;
+}
+.card:hover .card-img > img {
+    transform: scale(1.1);
+    transition: all 0.8s;
+}
+.card-title {
+    padding: 35px 0;
+    display: flex;
+    justify-content: center;
+}
+.card-title p {
+    font-size: inherit;
+    color: #555;
+}
+.card:hover .card-title p {
+    font-weight: bold;
+} /* project detail */
+.project-detail {
+    padding: 170px 0 100px;
+}
+.project-detail .inner {
+    width: 70%;
+    margin: 0 auto;
+}
+.detail {
+    background-color: #fff;
+    padding: 10px;
+}
+.detail-img img {
+    width: 100%;
+}
+.detail-content {
+    padding: 20px; 10px;
+}
+.detail-content .title {
+    margin-bottom: 20px;
+}
+.detail-content .title p {
+    font-size: 18px;
+    color: #222;
+}
+.detail-content .tech {
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.09);
+}
+.detail-content .tech p {
+    text-transform: uppercase;
+    font-size: 14px;
+    color: #888;
+}
+.detail-content .description {
+    line-height: 1.7;
+}
+.list {
+    padding-top: 40px;
+    display: flex;
+    justify-content: center;
+}
+.list .list-btn {
+    text-align: center;
+    display: block;
+    width: 150px;
+    padding: 10px 0;
+    background-color: #333;
+    color: #fff;
+    transition: all 0.8s;
+}
+.list .list-btn:hover {
+    opacity: 0.8;
+} /* 반응형 */
+@media all and(max-width: 768px) {
+    /* header */
+    #header .inner {
+        width: 90%;
+    }
+    .project-detail .inner {
+        width: 90%;
+        padding: 0 5%;
+    }
+}
+@media all and(max-width: 460px) {
+    /* project */
+    .project .inner,
+    .project-detail .inner {
+        width: 100%;
+        padding: 0 3%;
+    }
+}
