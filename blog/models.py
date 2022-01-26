@@ -8,14 +8,12 @@ class Post(models.Model):
     updated_at = models.DateTimeField(auto_now=True)
     categories = models.ManyToManyField('Category', related_name='posts')
 
-
     def __str__(self):
         return self.title
 
 
 class Category(models.Model):
     ame = models.CharField(max_length=50)
-
 
     def __str__(self):
         return self.name
