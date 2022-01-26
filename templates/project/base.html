@@ -3,6 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/moonspam/NanumSquare@1.0/nanumsquare.css">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/reset.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
     {% block title %}
     <title>MAIN</title>
     {% endblock %}
@@ -27,6 +31,8 @@
         {% block content %}
         {% endblock %}
     </section>
+    {% load static %}
+    <script src="{% static 'js/main.js' %}"></script>
 </body>
 </html>
 
