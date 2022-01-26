@@ -23,7 +23,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 # Read SECRET_KEY from an environment variable
 
-
+ALLOWED_HOSTS = ['khs-portfolio.herokuapp.com', '127.0.0.1']
 
 # settings.py
 
