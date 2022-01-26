@@ -30,7 +30,7 @@ import os
 # DEBUG = True
 DEBUG = bool(os.environ.get('DJANGO_DEBUG', True))
 
-ALLOWED_HOSTS = ['safe-mountain-51142.herokuapp.com', '127.0.0.1']
+ALLOWED_HOSTS = ['hyeonsooportfolio.herokuapp.com', '127.0.0.1:8000']
 
 
 # Application definition
