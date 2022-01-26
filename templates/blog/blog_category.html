@@ -1,0 +1,21 @@
+<!-- templates/blog/blog_cagegory.html -->
+{% extends 'base.html' %}
+{% block title %}
+    <title>{{ post.title }}</title>
+{% endblock %}
+{% block content %}
+    <section class="category-index">
+        <div class="inner">
+            <div class="title">
+                <h2>#{{ category }}</h2>
+                {% for post in posts %}
+                    <div class="category-list">
+                        <h4>
+                            <a href="{% url 'blog:detail' post.id %}">{{ post.title }}</a>
+                        </h4>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+{% endblock %}

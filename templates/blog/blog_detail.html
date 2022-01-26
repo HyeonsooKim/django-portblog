@@ -1,0 +1,32 @@
+<!-- templates/blog/blog_detail.html -->
+{% extends 'base.html' %}
+{% block title %}
+    <title>{{ post.title }}</title>
+{% endblock %}
+{% block content %}
+    <section class="blog-detail">
+        <div class="inner">
+            <h2 class="title">{{ post.title }}</h2>
+            <div class="date">
+                <ul>
+                    <li>{{ post.created_at.date }}</li>
+                    {% for category in post.categories.all %}
+                        <li>
+                            <a href="{% url 'blog:category' category.name %}">{{ category.name }}</a>
+                        </li>
+                    {% endfor %}
+                </ul>
+            </div>
+            <div class="contents">
+                <p>
+                    {{ post.contents | linebreaks }}
+                </p>
+            </div>
+            <div class="go-list">
+                <a href="{% url 'blog:index' %}">
+                    <button>목록으로</button>
+                </a>
+            </div>
+        </div>
+    </section>
+{% endblock %}

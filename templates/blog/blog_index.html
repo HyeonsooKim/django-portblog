@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% block title %}
+    <title>블로그메인</title>
+{% endblock %}
+{% block content %}
+    <section class="blog-index">
+        <div class="inner">
+            {% for post in posts %}
+                <div class="date">
+                    <ul>
+                        <li>
+                            <p>{{ post.created_at.date }}</p>
+                        </li>
+                        {% for category in post.categories.all %}
+                            <li>
+                                <a href="{% url 'blog:category' category.name %}">{{ category.name }}</a>
+                            </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+                <div class="title">
+                    <a href="{% url 'blog:detail' post.id %}">
+                        <h4>{{ post.title }}</h4>
+                        <p>{{ post.contents | slice:":200" }}...</p>
+                    </a>
+                </div>
+            {% endfor %}
+        </div>
+    </section>
+{% endblock %}
