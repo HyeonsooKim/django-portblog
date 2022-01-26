@@ -1,4 +1,4 @@
-{% extends 'base.html' %}
+{% extends 'project/base.html' %}
 {% block title %}
 <title>프로젝트</title>
 {% endblock %}
@@ -16,9 +16,7 @@
                                 <img src="{{ item.image.url }}" alt="{{ item.title }}" width="300px">
                             </div>
                             <div class="card-title">
-                                <p>
-                                    {{ item.title }}
-                                </p>
+                                <p>{{ item.title }}</p>
                             </div>
                         </a>
                     </div>

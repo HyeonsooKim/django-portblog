@@ -13,24 +13,20 @@
         <header id="header">
             <div class="inner">
                 <h1 class="logo">
-                    <a href="{% url 'project:index' %}">
-                        logo
-                    </a>
+                    <a href="{% url 'project:index' %}">logo</a>
                 </h1>
                 <nav class="nav">
                     <ul>
                         <li><a href="{% url 'project:index' %}">프로젝트</a></li>
-
                         <li><a href="#!">블로그</a></li>
                     </ul>
                 </nav>
             </div>
         </header>
-
         <!-- end header -->
         {% block content %}
         {% endblock %}
-
     </section>
 </body>
 </html>
+
