@@ -1,0 +1,332 @@
+@charset "utf-8";
+* {
+    box-sizing: border-box;
+    text-decoration: none;
+}
+body {
+    font-family: 'NanumSquare', sans-serif;
+    font-size: 14px;
+    color: #333;
+}
+.wrap {
+    background-color: #fafafa;
+}
+
+/* header */
+#header {
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 999;
+    width: 100%;
+    background: #fff;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.09);
+    transition: all 0.7s;
+}
+#header .inner {
+    width: 70%;
+    height: 90px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+}
+.logo {
+    display: block;
+    padding-top: 10px;
+}
+.logo > a {
+    display: block;
+    text-indent: -9999px;
+    width: 45px;
+    height: 70px;
+    background: url("/static/images/logo.c5d7fa77a452.png") no-repeat;
+    background-size: 100%;
+}
+.nav ul {
+    display: flex;
+    width: 120px;
+    justify-content: space-between;
+    line-height: 90px;
+}
+.nav ul li a {
+    position: relative;
+    font-size: 16px;
+    color: #000;
+}
+.nav ul li a:after {
+    content: "";
+    width: 0;
+    height: 1px;
+    position: absolute;
+    background: #888;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: all 0.3s;
+}
+.nav ul li a:hover::after,
+.nav ul li a:focus::after {
+    width: 100%;
+}
+
+/* header scroll event */
+#header.on {
+    position: fixed;
+}
+
+/* project index */
+.project {
+    padding-top: 170px;
+    padding-bottom: 70px;
+    width: 100%;
+}
+.project .inner {
+    width: 70%;
+    margin: 0 auto;
+}
+.project-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+.project-list li {
+    margin-bottom: 30px;
+}
+.card {
+    background: #fff;
+    border: 1px solid rgba(0, 0, 0, 0.09);
+}
+.card-img img {
+    width: 100%;
+}
+.card-img {
+    overflow: hidden;
+}
+.card:hover .card-img > img {
+    transform: scale(1.1);
+    transition: all 0.8s;
+}
+.card-title {
+    padding: 35px 0;
+    display: flex;
+    justify-content: center;
+}
+.card-title p {
+    font-size: inherit;
+    color: #555;
+}
+.card:hover .card-title p {
+    font-weight: bold;
+}
+
+/* project detail */
+.project-detail {
+    padding: 170px 0 100px;
+}
+.project-detail .inner {
+    width: 70%;
+    margin: 0 auto;
+}
+.detail {
+    background-color: #fff;
+    padding: 10px;
+}
+.detail-img img {
+    width: 100%;
+}
+.detail-content {
+    padding: 20px; 10px;
+}
+.detail-content .title {
+    margin-bottom: 20px;
+}
+.detail-content .title p {
+    font-size: 18px;
+    color: #222;
+}
+.detail-content .tech {
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.09);
+}
+.detail-content .tech p {
+    text-transform: uppercase;
+    font-size: 14px;
+    color: #888;
+}
+.detail-content .description {
+    line-height: 1.7;
+}
+.list {
+    padding-top: 40px;
+    display: flex;
+    justify-content: center;
+}
+.list .list-btn {
+    text-align: center;
+    display: block;
+    width: 150px;
+    padding: 10px 0;
+    background-color: #333;
+    color: #fff;
+    transition: all 0.8s;
+}
+.list .list-btn:hover {
+    opacity: 0.8;
+}
+
+/* blog index */
+.blog-index {
+    padding: 170px 0 100px;
+}
+.blog-index .inner {
+    width: 70%;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 20px 30px;
+}
+.blog-index .inner .date {
+    margin-top: 25px;
+    margin-bottom: 30px;
+}
+.blog-index .inner .date ul {
+    display: flex;
+    justify-content: space-between;
+    width: 180px;
+}
+.blog-index .inner .date ul li {
+    color: #909090;
+    position: relative;
+}
+.blog-index .inner .date ul li a {
+    color: #909090;
+}
+.blog-index .inner .date ul li a:after {
+    position: absolute;
+    content: "";
+    background: #888;
+    height: 1px;
+    width: 100%;
+    bottom: -5px;
+    left: 0;
+}
+.blog-index .inner .title {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.09);
+    padding-bottom: 20px;
+}
+.blog-index .inner .title:last-child {
+    border-bottom: none;
+}
+.blog-index .inner .title h4 {
+    font-size: 22px;
+    color: #000;
+    margin-bottom: 15px;
+}
+.blog-index .inner .title p {
+    color: #777;
+    line-height: 1.7;
+}
+
+/* blog detail */
+.blog-detail {
+    padding: 170px 0 100px;
+    height: 100vh;
+}
+.blog-detail .inner {
+    background-color: #fff;
+    width: 70%;
+    margin: 0 auto;
+    padding: 50px 20px 40px;
+}
+.blog-detail .inner .title {
+    font-size: 25px;
+    color: #000;
+    margin-bottom: 15px;
+}
+.blog-detail .inner .date {
+    margin-bottom: 30px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.09);
+    padding-bottom: 20px;
+}
+.blog-detail .inner .date ul {
+    display: flex;
+    justify-content: space-between;
+    width: 160px;
+}
+.blog-detail .inner .date ul li {
+    font-size: 13px;
+    color: #777;
+}
+.blog-detail .inner .date ul li a {
+    color: #777;
+}
+.contents p {
+    line-height: 1.7;
+}
+.go-list {
+    margin-top: 25px;
+}
+.go-list button {
+    border: none;
+    background: transparent;
+    font-size: 14px;
+    border: 1px solid #000;
+    padding: 10px;
+}
+.go-list button:hover {
+    background-color: #000;
+    color: #fff;
+    transition: all 0.6s;
+}
+
+/* blog category */
+.category-index {
+    padding: 170px 0 100px;
+    height: 100vh;
+}
+.category-index .inner {
+    width: 70%;
+    margin: 0 auto;
+    background-color: #fff;
+    display: flex;
+    justify-content: center;
+}
+.category-index .inner .title {
+    padding: 70px; 0
+}
+.category-index .inner .title h2 {
+    font-weight: bold;
+    font-size: 25px;
+    margin-bottom: 30px;
+}
+.category-list {
+    margin-bottom: 10px;
+}
+.category-list h4 a {
+    font-size: 18px;
+    color: #777;
+}
+
+/* 반응형 */
+@media all and(max-width: 768px) {
+    #header .inner {
+        width: 90%;
+    }
+    .project-detail .inner {
+        width: 90%;
+        padding: 0 5%;
+    }
+    .blog-index .inner {
+        width: 90%;
+    }
+    .blog-detail .inner {
+        width: 95%;
+    }
+}
+@media all and(max-width: 460px) {
+    .project .inner,
+    .project-detail .inner {
+        width: 100%;
+        padding: 0 3%;
+    }
+}

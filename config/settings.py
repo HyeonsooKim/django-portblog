@@ -22,15 +22,16 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # SECURITY WARNING: keep the secret key used in production secret!
 
 # Read SECRET_KEY from an environment variable
-from secret import SECRET_KEY
-import os
 
 
-# SECURITY WARNING: don't run with debug turned on in production!
-# DEBUG = True
-DEBUG = bool(os.environ.get('DJANGO_DEBUG', True))
 
-ALLOWED_HOSTS = ['hspofol.herokuapp.com/project', '127.0.0.1:8000/project']
+# settings.py
+
+from decouple import config
+
+SECRET_KEY = config('SECRET_KEY')
+# cast=bool 이 없으면 False 를 문자열로 인식하게됨.
+DEBUG = config('DEBUG', default=False, cast=bool)
 
 
 # Application definition
